@@ -1,0 +1,47 @@
+---
+title: ForGov process diagrams
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/layout.css">
+  <link rel="stylesheet" href="/forgov-process-diagrams.css">
+  {% if head_css.length %}
+    {% for cssfile in head_css.split(', ') %}
+      <link rel="stylesheet" href="{{ cssfile | safe }}">
+    {% endfor %}
+  {% endif %}
+  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+  {% if head_js.length %}
+    {% for jsfile in head_js.split(', ') %}
+      <script src="{{ jsfile | safe }}"></script>
+    {% endfor %}
+  {% endif %}
+</head>
+<body {% if theme.length %}class="{{ theme }}" {% endif %}>
+
+  <h1>{{ title }}</h1>
+  <div class="container mt4">
+    {{ content | safe }}
+  </div>
+
+  <h2>Mobile-ish layout</h2>
+  <div class="container" style="max-width:420px; border:3px solid grey;">
+    {{ content | safe }}
+  </div>
+
+  <div id="footer-scripts">
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/forgov-process-diagrams.js"></script>
+    {% if footer_js.length %}
+      {% for jsfile in footer_js.split(', ') %}
+        <script src="{{ jsfile | safe }}"></script>
+      {% endfor %}
+    {% endif %}
+  </div>
+</body>
+</html>

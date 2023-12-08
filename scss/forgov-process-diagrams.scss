@@ -1,0 +1,137 @@
+$border-width: 2px;
+$spacer: 1em;
+
+#qg-primary-content .fg_process-diagram,
+.fg_process-diagram {
+  color: #000;
+  display: flex;
+  list-style: none;
+  overflow-x: auto;
+  padding: $spacer 0;
+  position: relative;
+  z-index: 0;
+
+  flex-direction: column;
+  align-items: center;
+  max-width: fit-content;
+
+  ol {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    position: relative;
+    row-gap: $spacer;
+  }
+
+  >ol {
+    flex-direction: column;
+
+    li>ol {
+      flex-direction: row;
+    }
+  }
+
+  >li {
+    max-width: 100%;
+  }
+
+  >li:first-child>.card:before {
+    content: none;
+  }
+
+  .card {
+    width: fit-content;
+    margin: $spacer auto;
+
+    &.card-success {
+      background-color: #f2f7ea;
+      border-color: #9ebf6d;
+    }
+
+    &.card-warning {
+      background-color: #ffedde;
+      border-color: #f9af71;
+    }
+
+    &.card-danger {
+      background-color: #fcf4f6;
+      border-color: #b90824;
+    }
+
+    &.card-info {
+      background-color: #eff5f6;
+      border-color: #1e77aa;
+    }
+  }
+
+  li>.card {
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      border-left: $border-width solid grey;
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      z-index: -1;
+    }
+
+    $vertical-line-position: calc(-#{$spacer} - #{$border-width*1.5});
+
+    &:before {
+      top: $vertical-line-position;
+    }
+
+    &:after {
+      bottom: $vertical-line-position;
+    }
+
+    // &:first-child:before,
+    &:last-child:after {
+      content: none;
+    }
+  }
+
+  .fg_process-diagram__split {
+    column-gap: $spacer;
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -1;
+      width: 50%;
+      height: 50%;
+    }
+
+    >li {
+      &:before {
+        content: '';
+        display: block;
+        border-top: $border-width solid grey;
+        width: calc(100% + #{$spacer*2});
+      }
+
+      &:first-child:before {
+        transform: translatex(calc(100% - #{$spacer}*.95));
+        width: calc(50% + #{$spacer});
+      }
+
+      &:last-child:before {
+        transform: translatex(-#{$spacer});
+        width: calc(50% + #{$spacer});
+      }
+    }
+  }
+
+  ol:not(.fg_process-diagram__split) {
+    flex-direction: column;
+    row-gap: 0;
+
+    li:not(:last-child)>.card:after {
+      content: "";
+    }
+  }
+}

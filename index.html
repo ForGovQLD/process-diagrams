@@ -1,0 +1,222 @@
+---
+layout: layout.njk
+title: Process diagram examples
+---
+
+<h2>Reconnecting diagram</h2>
+<ol class="fg_process-diagram">
+  <li>You start a thing here.
+    <ol class="fg_process-diagram__split">
+      <li>This is the first option.
+        <!-- <ol>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod doloribus beatae qui distinctio illo minima harum.
+              </li>
+            </ol> -->
+      </li>
+      <li>This is the second option.
+        <!-- <ol>
+              <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, repudiandae fugit, maxime asperiores et modi consequatur corrupti possimus odio deserunt sapiente eaque delectus dolore voluptatem ipsa dolor recusandae quaerat id!</li>
+            </ol> -->
+      </li>
+    </ol>
+  </li>
+  <li class="fg_process-diagram__connect">The thing ends here.</li>
+</ol>
+
+<h2>Three option diagram</h2>
+<ol class="fg_process-diagram">
+  <li>
+    You were employed full-time or part-time under the EBA for the relevant year.
+    <ol class="fg_process-diagram__split">
+      <li>
+        You were still employed under the EBA at calculation date.
+        <ol>
+          <li class="success">
+            You are eligible for the COLA payment. No further action required. COLA payment will be automatically
+            processed.
+          </li>
+        </ol>
+      </li>
+      <li>
+        You changed agencies and are no longer employed under the same EBA at calculation date.
+        <ol class="fg_process-diagram__split">
+          <li>
+            You were a Queensland Government employee at EBA calculation date.
+            <ol>
+              <li class="warning">
+                You are eligible for the COLA payment. You must complete the COLA form to receive payment.
+              </li>
+            </ol>
+          </li>
+          <li>
+            You were not a Queensland Government employee at EBA calculation date.
+            <ol>
+              <li class="danger">
+                You are not eligible for COLA payment.
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li>You were never employed by Queensland Government.
+        <ol>
+          <li class="danger">You are not eligible for COLA payment.</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<ol class="fg_process-diagram">
+  <li>
+    You were casually employed under the EBA for the relevant year.
+    <ol class="fg_process-diagram__split">
+      <li>
+        You were still employed under the same EBA at calculation date.
+        <ol class="fg_process-diagram__split">
+          <li>
+            You worked under the same EBA in the 12 weeks leading to the calculation date.
+            <ol>
+              <li class="success">
+                You are eligible for the COLA payment. No further action required. COLA payment will be automatically
+                processed.
+              </li>
+            </ol>
+          </li>
+          <li>
+            You did not work under the same EBA in the 12 weeks leading to the calculation date.
+            <ol>
+              <li class="danger">
+                You are not eligible for COLA payment.
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li>
+        You changed agencies and are no longer employed under the same EBA at calculation date.
+        <ol class="fg_process-diagram__split">
+          <li>
+            You remained a Queensland Government employee and worked within 12 weeks leading up to the calculation date.
+            <ol>
+              <li class="warning">
+                You are eligible for the COLA payment. You must complete the COLA form to receive payment.
+              </li>
+            </ol>
+          </li>
+          <li>
+            You were not a Queensland Government employee at EBA or you did not work within 12 weeks leading up to the
+            calculation date.
+            <ol>
+              <li class="danger">
+                You are not eligible for COLA payment.
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li>You were never employed by Queensland Government.
+        <ol>
+          <li>Some other option</li>
+          <li>Another option</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<h2>
+  Full- and part-time government employees
+</h2>
+<ol class="fg_process-diagram">
+  <li>
+    You were employed full-time or part-time under the EBA for the relevant year.
+    <ol class="fg_process-diagram__split">
+      <li>
+        You were still employed under the EBA at calculation date.
+        <ol>
+          <li class="success">
+            You are eligible for the COLA payment. No further action required. COLA payment will be automatically
+            processed.
+          </li>
+        </ol>
+      </li>
+      <li>
+        You changed agencies and are no longer employed under the same EBA at calculation date.
+        <ol class="fg_process-diagram__split">
+          <li>
+            You were a Queensland Government employee at EBA calculation date.
+            <ol>
+              <li class="warning">
+                You are eligible for the COLA payment. You must complete the COLA form to receive payment.
+              </li>
+            </ol>
+          </li>
+          <li>
+            You were not a Queensland Government employee at EBA calculation date.
+            <ol>
+              <li class="danger">
+                You are not eligible for COLA payment.
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<h2>
+  Casual government employees
+</h2>
+<ol class="fg_process-diagram">
+  <li>
+    You were casually employed under the EBA for the relevant year.
+    <ol class="fg_process-diagram__split">
+      <li>
+        You were still employed under the same EBA at calculation date.
+        <ol class="fg_process-diagram__split">
+          <li>
+            You worked under the same EBA in the 12 weeks leading to the calculation date.
+            <ol>
+              <li class="success">
+                You are eligible for the COLA payment. No further action required. COLA payment will be automatically
+                processed.
+              </li>
+            </ol>
+          </li>
+          <li>
+            You did not work under the same EBA in the 12 weeks leading to the calculation date.
+            <ol>
+              <li class="danger">
+                You are not eligible for COLA payment.
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li>
+        You changed agencies and are no longer employed under the same EBA at calculation date.
+        <ol class="fg_process-diagram__split">
+          <li>
+            You remained a Queensland Government employee and worked within 12 weeks leading up to the calculation date.
+            <ol>
+              <li class="warning">
+                You are eligible for the COLA payment. You must complete the COLA form to receive payment.
+              </li>
+            </ol>
+          </li>
+          <li>
+            You were not a Queensland Government employee at EBA or you did not work within 12 weeks leading up to the
+            calculation date.
+            <ol>
+              <li class="danger">
+                You are not eligible for COLA payment.
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>

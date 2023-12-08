@@ -1,0 +1,12 @@
+body {
+  padding: 1em; }
+  body.dark {
+    background-color: #444;
+    color: lightgrey; }
+
+.container {
+  padding: 2em;
+  max-width: 995px; }
+
+h1, h2, h3, h4, h5 {
+  margin-top: 1.3rem; }
