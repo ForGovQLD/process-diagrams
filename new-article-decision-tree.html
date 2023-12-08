@@ -1,0 +1,100 @@
+---
+layout: layout.njk
+title: New article decision tree
+<!-- theme: dark -->
+---
+
+<ol class="fg_process-diagram fg_process-diagram__arrows">
+  <li class="info">
+    Is there demand or need for information on this topic?
+    <ol class="fg_process-diagram__split">
+      <li>No
+        <ol>
+          <li id="consider-alternative" class="warning">Consider an alternative communication method</li>
+        </ol>
+      </li>
+      <li>Yes
+        <ol>
+          <li class="info">Is the information covered in an existing article?
+            <ol class="fg_process-diagram__split">
+              <li>No
+                <ol>
+                  <li class="info">Is the information time-sensitive or subject to frequent-changes?
+                    <ol class="fg_process-diagram__split">
+                      <li data-connects-to="consider-alternative">Yes</li>
+                      <li>No
+                        <ol>
+                          <li class="info">Is the information broadly relevant or limited?
+                            <ol class="fg_process-diagram__split">
+                              <li data-connects-to="consider-alternative">Limited</li>
+                              <li>Broad
+                                <ol>
+                                  <li class="danger" data-connects-to="new-article">Seek approval to proceed</li>
+                                </ol>
+                              </li>
+                            </ol>
+                          </li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li>Yes
+                <ol>
+                  <li class="info">Is the information accurate and current in the existing article?
+                    <ol class="fg_process-diagram__split">
+                      <li>Yes
+                        <ol>
+                          <li id="not-required" class="warning">New article not required</li>
+                        </ol>
+                      </li>
+                      <li>No
+                        <ol>
+                          <li class="info">Can the information be added to the existing article? e.g. and exception
+                            <ol class="fg_process-diagram__split">
+                              <li>Yes
+                                <ol>
+                                  <li class="warning" data-connects-to="not-required">Update existing article</li>
+                                </ol>
+                              </li>
+                              <li>No
+                                <ol>
+                                  <li class="warning" data-connects-to="new-article">Consider updating the existing
+                                    article so it connects with/supports the new article</li>
+                                </ol>
+                              </li>
+                            </ol>
+                          </li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li id="new-article" class="info">Does the information have...
+    <ol class="fg_process-diagram__split">
+      <li>Instructions to follow
+        <ol>
+          <li class="success">Create a new article using the 'How to' template</li>
+        </ol>
+      </li>
+      <li>A question to answer
+        <ol>
+          <li class="success">Create a new article using the 'FAQ' template</li>
+        </ol>
+      </li>
+      <li>Generic in nature e.g. definitions, reference material
+        <ol>
+          <li class="success">Create a new article using the 'Standard' template</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
