@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #qg-primary-content .fg_process-diagram,
 .fg_process-diagram {
   color: #000;
@@ -17,22 +18,21 @@
     padding-left: 0;
     position: relative;
     row-gap: 1em; }
-  #qg-primary-content .fg_process-diagram > ol,
-  .fg_process-diagram > ol {
-    flex-direction: column; }
-    #qg-primary-content .fg_process-diagram > ol li > ol,
-    .fg_process-diagram > ol li > ol {
-      flex-direction: row; }
   #qg-primary-content .fg_process-diagram > li,
   .fg_process-diagram > li {
     max-width: 100%; }
   #qg-primary-content .fg_process-diagram > li:first-child > .card:before,
   .fg_process-diagram > li:first-child > .card:before {
     content: none; }
+  #qg-primary-content .fg_process-diagram > li:first-child > .card .card-body:before,
+  .fg_process-diagram > li:first-child > .card .card-body:before {
+    content: none; }
   #qg-primary-content .fg_process-diagram .card,
   .fg_process-diagram .card {
     width: fit-content;
-    margin: 1em auto; }
+    margin: 1em auto;
+    background-color: #fff;
+    border-color: #999; }
     #qg-primary-content .fg_process-diagram .card.card-success,
     .fg_process-diagram .card.card-success {
       background-color: #f2f7ea;
@@ -52,7 +52,7 @@
   #qg-primary-content .fg_process-diagram li > .card:before, #qg-primary-content .fg_process-diagram li > .card:after,
   .fg_process-diagram li > .card:before,
   .fg_process-diagram li > .card:after {
-    content: '';
+    content: "";
     display: block;
     border-left: 2px solid grey;
     height: 100%;
@@ -71,29 +71,41 @@
   #qg-primary-content .fg_process-diagram .fg_process-diagram__split,
   .fg_process-diagram .fg_process-diagram__split {
     column-gap: 1em; }
+    #qg-primary-content .fg_process-diagram .fg_process-diagram__split .fg_process-diagram__split,
+    .fg_process-diagram .fg_process-diagram__split .fg_process-diagram__split {
+      justify-content: center; }
     #qg-primary-content .fg_process-diagram .fg_process-diagram__split:before, #qg-primary-content .fg_process-diagram .fg_process-diagram__split:after,
     .fg_process-diagram .fg_process-diagram__split:before,
     .fg_process-diagram .fg_process-diagram__split:after {
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       z-index: -1;
       width: 50%;
       height: 50%; }
-    #qg-primary-content .fg_process-diagram .fg_process-diagram__split > li:before,
-    .fg_process-diagram .fg_process-diagram__split > li:before {
-      content: '';
-      display: block;
-      border-top: 2px solid grey;
-      width: calc(100% + 2em); }
-    #qg-primary-content .fg_process-diagram .fg_process-diagram__split > li:first-child:before,
-    .fg_process-diagram .fg_process-diagram__split > li:first-child:before {
-      transform: translatex(calc(100% - 1em*.95));
-      width: calc(50% + 1em); }
-    #qg-primary-content .fg_process-diagram .fg_process-diagram__split > li:last-child:before,
-    .fg_process-diagram .fg_process-diagram__split > li:last-child:before {
-      transform: translatex(-1em);
-      width: calc(50% + 1em); }
+    #qg-primary-content .fg_process-diagram .fg_process-diagram__split > li,
+    .fg_process-diagram .fg_process-diagram__split > li {
+      height: fit-content; }
+      #qg-primary-content .fg_process-diagram .fg_process-diagram__split > li > .card,
+      .fg_process-diagram .fg_process-diagram__split > li > .card {
+        margin-top: 1em; }
+        #qg-primary-content .fg_process-diagram .fg_process-diagram__split > li > .card:before,
+        .fg_process-diagram .fg_process-diagram__split > li > .card:before {
+          top: calc(-1em - 3px); }
+      #qg-primary-content .fg_process-diagram .fg_process-diagram__split > li:before,
+      .fg_process-diagram .fg_process-diagram__split > li:before {
+        content: "";
+        display: block;
+        border-top: 2px solid grey;
+        width: calc(100% + 2em); }
+      #qg-primary-content .fg_process-diagram .fg_process-diagram__split > li:first-child:before,
+      .fg_process-diagram .fg_process-diagram__split > li:first-child:before {
+        transform: translatex(calc(100% - 1em* 0.95));
+        width: calc(50% + 1em); }
+      #qg-primary-content .fg_process-diagram .fg_process-diagram__split > li:last-child:before,
+      .fg_process-diagram .fg_process-diagram__split > li:last-child:before {
+        transform: translatex(-1em);
+        width: calc(50% + 1em); }
   #qg-primary-content .fg_process-diagram ol:not(.fg_process-diagram__split),
   .fg_process-diagram ol:not(.fg_process-diagram__split) {
     flex-direction: column;
@@ -101,3 +113,77 @@
     #qg-primary-content .fg_process-diagram ol:not(.fg_process-diagram__split) li:not(:last-child) > .card:after,
     .fg_process-diagram ol:not(.fg_process-diagram__split) li:not(:last-child) > .card:after {
       content: ""; }
+    #qg-primary-content .fg_process-diagram ol:not(.fg_process-diagram__split) li > .card:last-child:after,
+    .fg_process-diagram ol:not(.fg_process-diagram__split) li > .card:last-child:after {
+      content: none; }
+  #qg-primary-content .fg_process-diagram.fg_process-diagram__arrows .card-body:before,
+  .fg_process-diagram.fg_process-diagram__arrows .card-body:before {
+    content: "▼";
+    width: 100%;
+    font-size: 1.2rem;
+    color: grey;
+    position: absolute;
+    top: -21px;
+    left: 1px;
+    text-align: center; }
+  #qg-primary-content .fg_process-diagram.fg_process-diagram__arrows .fg_process-diagram__split,
+  .fg_process-diagram.fg_process-diagram__arrows .fg_process-diagram__split {
+    column-gap: 2em; }
+    #qg-primary-content .fg_process-diagram.fg_process-diagram__arrows .fg_process-diagram__split > li > .card,
+    .fg_process-diagram.fg_process-diagram__arrows .fg_process-diagram__split > li > .card {
+      margin-top: 1.5em; }
+      #qg-primary-content .fg_process-diagram.fg_process-diagram__arrows .fg_process-diagram__split > li > .card:before,
+      .fg_process-diagram.fg_process-diagram__arrows .fg_process-diagram__split > li > .card:before {
+        top: calc(-1.5em - 3px); }
+  #qg-primary-content .fg_process-diagram .connector,
+  .fg_process-diagram .connector {
+    position: absolute;
+    border: 2px solid grey; }
+    #qg-primary-content .fg_process-diagram .connector.connect-left,
+    .fg_process-diagram .connector.connect-left {
+      border-right: 0; }
+      #qg-primary-content .fg_process-diagram .connector.connect-left.connect-level:before,
+      .fg_process-diagram .connector.connect-left.connect-level:before {
+        content: "◀";
+        top: -15px;
+        right: 1em; }
+      #qg-primary-content .fg_process-diagram .connector.connect-left.connect-above:before,
+      .fg_process-diagram .connector.connect-left.connect-above:before {
+        left: -8px; }
+    #qg-primary-content .fg_process-diagram .connector.connect-right,
+    .fg_process-diagram .connector.connect-right {
+      border-left-width: 0; }
+      #qg-primary-content .fg_process-diagram .connector.connect-right.connect-level:before,
+      .fg_process-diagram .connector.connect-right.connect-level:before {
+        content: "▶";
+        top: -15px;
+        left: 1em; }
+      #qg-primary-content .fg_process-diagram .connector.connect-right.connect-above:before,
+      .fg_process-diagram .connector.connect-right.connect-above:before {
+        right: -8px; }
+    #qg-primary-content .fg_process-diagram .connector.connect-above,
+    .fg_process-diagram .connector.connect-above {
+      border-top: 0; }
+      #qg-primary-content .fg_process-diagram .connector.connect-above:before,
+      .fg_process-diagram .connector.connect-above:before {
+        content: "▲";
+        top: -24px; }
+    #qg-primary-content .fg_process-diagram .connector.connect-below,
+    .fg_process-diagram .connector.connect-below {
+      border-top-width: 0; }
+      #qg-primary-content .fg_process-diagram .connector.connect-below.connect-right,
+      .fg_process-diagram .connector.connect-below.connect-right {
+        border-right-width: 0;
+        border-left-width: 2px; }
+      #qg-primary-content .fg_process-diagram .connector.connect-below:before,
+      .fg_process-diagram .connector.connect-below:before {
+        content: "▼"; }
+    #qg-primary-content .fg_process-diagram .connector.connect-level,
+    .fg_process-diagram .connector.connect-level {
+      border-width: 0;
+      border-top-width: 2px; }
+    #qg-primary-content .fg_process-diagram .connector:before,
+    .fg_process-diagram .connector:before {
+      font-size: 1.2rem;
+      color: grey;
+      position: absolute; }
