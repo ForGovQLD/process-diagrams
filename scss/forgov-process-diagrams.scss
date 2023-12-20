@@ -13,23 +13,23 @@ $card__danger_bg: #fcf4f6;
 $card__danger_border: #b90824;
 
 // Dark theme
-// $bg-color: #333;
-// $color: #fff;
-// $card__default-bg: #666;
-// $card__default-border-color: #999;
-// $card__success-bg: darken($card__success-bg, 75%);
-// $card__success-border: darken($card__success-border, 25%);
-// $card__info-bg: darken($card__info-bg, 75%);
-// $card__info-border: darken($card__info-border, 5%);
-// $card__warning-bg: darken($card__warning-bg, 75%);
-// $card__warning-border: darken($card__warning-border, 25%);
-// $card__danger-bg: darken($card__danger-bg, 75%);
-// $card__danger-border: darken($card__danger-border, 10%);
+$bg-color__dark: #333;
+$color__dark: #fff;
+$card__default-bg__dark: #666;
+$card__default-border-color__dark: #999;
+$card__success-bg__dark: darken($card__success-bg, 75%);
+$card__success-border__dark: darken($card__success-border, 25%);
+$card__info-bg__dark: darken($card__info-bg, 75%);
+$card__info-border__dark: darken($card__info-border, 5%);
+$card__warning-bg__dark: darken($card__warning-bg, 75%);
+$card__warning-border__dark: darken($card__warning-border, 25%);
+$card__danger-bg__dark: darken($card__danger-bg, 75%);
+$card__danger-border__dark: darken($card__danger-border, 10%);
 
 $border-width: 2px;
 $spacer: 1em;
 
-#qg-primary-content .fg_process-diagram,
+// #qg-primary-content .fg_process-diagram,
 .fg_process-diagram {
   color: $color;
   display: flex;
@@ -49,10 +49,15 @@ $spacer: 1em;
     padding-left: 0;
     position: relative;
     row-gap: $spacer;
+
   }
 
   >li {
     max-width: 100%;
+
+    &[id] {
+      position: relative;
+    }
   }
 
   >li:first-child {
@@ -60,11 +65,13 @@ $spacer: 1em;
       &:before {
         content: none;
       }
+
       .card-body:before {
         content: none;
       }
     }
   }
+
   .card {
     width: fit-content;
     margin: $spacer auto;
@@ -144,10 +151,12 @@ $spacer: 1em;
 
       >.card {
         margin-top: $spacer;
+
         &:before {
           top: calc(-#{$spacer} - #{$border-width * 1.5});
         }
       }
+
       &:before {
         content: "";
         display: block;
@@ -156,8 +165,8 @@ $spacer: 1em;
       }
 
       &:first-child:before {
-        transform: translatex(calc(100% - #{$spacer}* 0.95));
-        width: calc(50% + #{$spacer});
+        transform: translatex(calc(100% - #{$spacer}* 1.95));
+        width: calc(50% + #{$spacer}* 2);
       }
 
       &:last-child:before {
@@ -185,7 +194,6 @@ $spacer: 1em;
       content: "▼";
       width: 100%;
       font-size: 1.2rem;
-      // color: lightgrey;
       color: grey;
       position: absolute;
       top: -21px;
@@ -195,13 +203,23 @@ $spacer: 1em;
 
     .fg_process-diagram__split {
       column-gap: 2*$spacer;
-      >li >.card {
+
+      >li>.card {
         margin-top: 1.5*$spacer;
 
         &:before {
           top: calc(-#{$spacer * 1.5} - #{$border-width * 1.5});
         }
       }
+    }
+
+    li.connect-below-target>.card {
+      margin-top: 1.5*$spacer;
+
+      &:before {
+        top: calc(-#{$spacer * 1.5} - #{$border-width * 1.5});
+      }
+
     }
 
   }
@@ -211,18 +229,20 @@ $spacer: 1em;
     border: $border-width solid grey;
 
     &.connect-left {
-      border-right: 0;
+      border-right-width: 0;
 
       &.connect-level:before {
         content: "◀";
         top: -15px;
         right: $spacer;
       }
+
       &.connect-above:before {
         left: -8px;
       }
 
     }
+
     &.connect-right {
       border-left-width: 0;
 
@@ -231,17 +251,21 @@ $spacer: 1em;
         top: -15px;
         left: $spacer;
       }
+
       &.connect-above:before {
         right: -8px;
       }
     }
+
     &.connect-above {
-    border-top: 0;
-    &:before {
+      border-top: 0;
+
+      &:before {
         content: "▲";
         top: -24px;
       }
     }
+
     &.connect-below {
       border-top-width: 0;
 
@@ -249,13 +273,25 @@ $spacer: 1em;
         border-right-width: 0;
         border-left-width: $border-width;
       }
+
+      &.connect-left {
+        border-left-width: 0;
+        border-right-width: $border-width;
+      }
+
       &:before {
-        content: "▼";
+        // content: "▼";
       }
     }
+
     &.connect-level {
       border-width: 0;
       border-top-width: $border-width;
+    }
+
+    &.connect-center {
+      border-bottom-width: 0;
+      border-right-width: 0;
     }
 
     &:before {
@@ -263,6 +299,41 @@ $spacer: 1em;
       // color: lightgrey;
       color: grey;
       position: absolute;
+    }
+  }
+}
+
+body.dark {
+
+  #qg-primary-content .fg_process-diagram,
+  .fg_process-diagram {
+    color: $color__dark;
+
+    .card {
+      width: fit-content;
+      margin: $spacer auto;
+      background-color: $card__default-bg__dark;
+      border-color: $card__default-border-color__dark;
+
+      &.card-success {
+        background-color: $card__success-bg__dark;
+        border-color: $card__success-border__dark;
+      }
+
+      &.card-warning {
+        background-color: $card__warning-bg__dark;
+        border-color: $card__warning-border__dark;
+      }
+
+      &.card-danger {
+        background-color: $card__danger-bg__dark;
+        border-color: $card__danger-border__dark;
+      }
+
+      &.card-info {
+        background-color: $card__info-bg__dark;
+        border-color: $card__info-border__dark;
+      }
     }
   }
 }
