@@ -29,7 +29,7 @@ $card__danger-border__dark: darken($card__danger-border, 10%);
 $border-width: 2px;
 $spacer: 1em;
 
-// #qg-primary-content .fg_process-diagram,
+#qg-primary-content .fg_process-diagram,
 .fg_process-diagram {
   color: $color;
   display: flex;
@@ -77,8 +77,6 @@ $spacer: 1em;
     margin: $spacer auto;
     background-color: $card__default-bg;
     border-color: $card__default-border-color;
-
-    // max-width: 300px;
 
     &.card-success {
       background-color: $card__success-bg;
@@ -227,6 +225,7 @@ $spacer: 1em;
   .connector {
     position: absolute;
     border: $border-width solid grey;
+    z-index: -1;
 
     &.connect-left {
       border-right-width: 0;
@@ -278,10 +277,6 @@ $spacer: 1em;
         border-left-width: 0;
         border-right-width: $border-width;
       }
-
-      &:before {
-        // content: "▼";
-      }
     }
 
     &.connect-level {
@@ -296,7 +291,6 @@ $spacer: 1em;
 
     &:before {
       font-size: 1.2rem;
-      // color: lightgrey;
       color: grey;
       position: absolute;
     }
