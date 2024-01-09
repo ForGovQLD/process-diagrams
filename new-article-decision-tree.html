@@ -1,7 +1,7 @@
 ---
 layout: layout.njk
 title: New article decision tree
-<!-- theme: dark -->
+theme: dark
 ---
 
 <ol class="fg_process-diagram fg_process-diagram__arrows">
@@ -10,7 +10,10 @@ title: New article decision tree
     <ol class="fg_process-diagram__split">
       <li>No
         <ol>
-          <li id="consider-alternative" class="warning">Consider an alternative communication method</li>
+          <li id="consider-alternative" class="warning">
+            <p>Consider alternative communication method</p>
+            <small>(Log in OneNote)</small>
+          </li>
         </ol>
       </li>
       <li>Yes
@@ -24,7 +27,9 @@ title: New article decision tree
                       <li data-connects-to="consider-alternative">Yes</li>
                       <li>No
                         <ol>
-                          <li class="info">Is the information broadly relevant or limited?
+                          <li class="info">
+                            <p>Is the information broadly relevant or limited?</p>
+                            <small>(e.g. affects most agencies in most situations vs a single agency in only rare circumstances)</small>
                             <ol class="fg_process-diagram__split">
                               <li data-connects-to="consider-alternative">Limited</li>
                               <li>Broad
@@ -51,7 +56,9 @@ title: New article decision tree
                       </li>
                       <li>No
                         <ol>
-                          <li class="info">Can the information be added to the existing article? e.g. and exception
+                          <li class="info">
+                            <p>Can the information be added to the existing article?</p>
+                            <small>(e.g. an exception)</small>
                             <ol class="fg_process-diagram__split">
                               <li>Yes
                                 <ol>
@@ -90,7 +97,9 @@ title: New article decision tree
           <li class="success">Create a new article using the 'FAQ' template</li>
         </ol>
       </li>
-      <li>Generic in nature e.g. definitions, reference material
+      <li>
+        <p>Generic in nature e.g. definitions, reference material</p>
+        <small>(e.g. Definitions, reference material etc.)</small>
         <ol>
           <li class="success">Create a new article using the 'Standard' template</li>
         </ol>
