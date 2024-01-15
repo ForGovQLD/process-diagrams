@@ -1,0 +1,57 @@
+---
+layout: layout.njk
+title: Expired article decision tree (connect below)
+---
+
+<ol class="fg_process-diagram fg_process-diagram__arrows">
+  <li class="info">
+    Is the content redundant, obsolete or irrelevant?
+    <ol class="fg_process-diagram__split">
+      <li>
+        Yes
+        <ol>
+          <li id="nominate" class="success">Nominate the article for retirement</li>
+        </ol>
+      </li>
+      <li>
+        No
+        <ol>
+          <li class="info">
+            Is the article a duplicate or has the topic already been covered?
+            <ol class="fg_process-diagram__split">
+              <li data-connects-to="update">Yes</li>
+              <li>No
+                <ol>
+                  <li id="update" class="info">Does the content need updating?
+                    <ol class="fg_process-diagram__split">
+                      <li>Yes
+                        <ol>
+                          <li id="review" class="warning" data-connects-to="guidelines">Review</li>
+                        </ol>
+                      </li>
+                      <li>No
+                        <ol>
+                          <li id="guidelines" class="info">
+                            Does the article meet the style guidelines and in the correct template?
+                            <ol class="fg_process-diagram__split">
+                              <li data-connects-to="review">No</li>
+                              <li>Yes
+                                <ol>
+                                  <li class="success">Publish</li>
+                                </ol>
+                              </li>
+                            </ol>
+                          </li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>

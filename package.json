@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "serve": "npx @11ty/eleventy --serve --quiet",
-    "scss": "node-sass --watch scss -o ./",
+    "watch-scss": "node-sass --watch scss -o ./",
+    "scss": "node-sass scss -o ./",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
